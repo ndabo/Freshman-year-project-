@@ -1,0 +1,47 @@
+PACMAN README
+OVERVIEW:
+Pac-Man is an action maze chase video game; the player controls the eponymous character through an enclosed maze.
+The objective of the game is to eat all of the dots placed in the maze while avoiding four colored ghosts—Blinky (red),
+Pinky (pink), Inky (blue), and Clyde (orange)—who pursue Pac-Man.
+the game has 3 modes:
+chase mode: In Chase Mode, the Ghosts chase Pacman.
+scatter mode:In Scatter mode, each Ghost’s target is a different corner of the board.
+the game start with pacman having 3 lives and when he lost all of them, the game is over.
+
+Frightened mode: this mode is activate when the ghost eat the energizer, The Ghosts turn light blue and move
+in a random direction at every timestep.
+the game has 10 classes:
+-App class, where all my top level classes are called;
+-Constants class, where all my constants are store;
+-board class, a class that model the board, and handle all my logique.
+_SmartSquares class, a class that has the component square of the board
+-energize class, model my energizer
+-BoardCoordinate class,an immutable representation of some coordinate within the Pacman board world.
+-paneOrganizer, my highest graphical class.
+-Ghost class, model the ghost and handle its behaviors;
+-Pacman class, model the pacman, and handle it's behavior,
+-dot class, a class that model the dot;
+
+one enum class:
+direction enum;
+
+and one interface, collidable that is implemented by the ghost, the energizer and the dots.
+
+DESIGN CHOICE:
+I use polymorphism to handle my collision by using the the collidable interface; I set each ghosts target in chase mode
+and scatter mode by checking their color; I also decide to handle all my logical aspect of the game in my board to reduce
+the use of getter method; I use the direection enum class to handle the movement in my game, since some component of my
+are not allow to do  180 degree turn; I use counter to switch between the chase and scatter mode; and Use the queu
+data Structure as my ghost pen since it's a first in first out; I also use one Big Array list for the dot and the
+energizer, so it is easy handle, i did that by using polymorphism;
+
+KNOWN BUG:
+sometimes when the ghost collide with the pacman, the live do not decrease. for the game to be over, the same ghost has
+to collide with pac three times. I try fixing it by using a for each loop in my handle collision method but that throw
+another error.
+sometimes when the ghost collide with pac man in frighten mode, the red ghost position is not set inside the pen and this
+eventhought it is added to the ghostPen Queue and this cause my red ghosts to disappear sometimes and reappear on the
+realease ghost position.
+
+TIME SPENT: 60 hours
+

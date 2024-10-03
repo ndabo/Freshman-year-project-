@@ -1,0 +1,23 @@
+TICTACTOE README
+
+OVERVIEW:
+
+TicTacToe is a game with two TicTacToePlayers competing against each other by placing their respective symbols (
+“X”s and “O”s) on a TicTacToeBoard. The Controller is the “referee” of the game. his role is to switch turns,
+check for a winner, and display updates about the gameplay. it has four support classes: CS15TicTacToeBoard--class that
+models a 3x3 tic tac toe board and tracks the player's selected CS15TicTacToeSquares;
+CS15TicTacToeController--class that controls the tic tac toe game and displays relevant game messages;
+CS15TicTacToeFrame--class that handles adding the game frame to the scene and opening the tic tac toe application;
+and CS15TicTacToeSquare-- a class that models one square of the CS15TicTacToeBoard.
+it also has three other classes: the App class which models an application and contain my top-level class;
+the TicTacToeGame class which is a top-level logic class that implements the CS15TicTacToeGame interface;
+and the TicTacToePlayer which represent the players.
+
+DESIGN CHOICE:
+
+in this project, I used association in my TicTacToePlayer class in the constructor to let the player know about the
+CS15TicTacToeBoard and the CS15TicTacToeController class. it was necessary because the player need to know about the
+board, the controller and the symbol he is using, without this association there will not be a tictactoe game.
+also in my TicTacToePlayer class I wrote an accessor that allow me to get the winning player in the TicTacToeGame class.
+
+HOURS SPENT: approximately 12 hours

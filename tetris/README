@@ -1,0 +1,28 @@
+Tetris README
+OVERVIEW:
+tetris is a game composed of a board and 7 pieces. the goal in the game is to pack as much pieces on top of each other
+as you can. the pieces are cleared when the line is full and the is over when you can no more pack a piece on the board.
+my tetris game has a score tracker on the top right, you can also pause the game by pressing "P" and unpaused by doing the
+same. you can also reset the game anytime you want to in the game. the pieces in the game can move left, right, rotate
+and down. everytime a line is clear 10 point is added to the score tracker and if you get four line clear at the same
+time you which is tetris, you get 100 added to your score. when the game is over the gameover label will appear the top
+left of the screen.
+the game has 7 classes:
+-App class, where all my top level classes are called;
+-Constants class, where all my constants are store;
+-board class, a class that model the board, it is made of squares;
+_tetrisPieces class, model the pieces in the game, also made of squares;
+-Square class, a class that has the component square of the board and the pieces;
+-Game class, my highest logical class;
+-paneOrganizer, my highest graphical class.
+
+DESIGN CHOICE:
+the most important design choice I made in this project was definitely having one class for seven pieces. since the
+pieces have different positions and color, i use parameters passing to define each pieces in the game class.
+I also chose to use the same square for both the board and the pieces so I can use the same methode on both the board
+and the pieces class. I also decided to check empty square on the board base the color of the board instead of checking
+if is null, this save me a lot of time. I use association between the board and the pieces this allow me to set the
+color of my board to the piece that land on the bottom border.
+KNOWN BUG:
+on pause the pieces can still move
+TIME SPENT:

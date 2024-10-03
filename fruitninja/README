@@ -1,0 +1,24 @@
+FRUITNINJA README
+
+OVERVIEW
+fruit ninja is a game where a player must slice the fruits launched into the air with the blade. each fruit has a
+specific score and everytime the fruit is sliced the player gain a specific point depending on the fruit. however, the
+player should not miss more than three fruits thrown in the air or sliced the bomb. if they do, they will lose the game.
+it has four support class: the constant class that has static variables; CS15Blade class that models the blade used in
+the game; CS15FruitNinjaFrame class that handle adding the game to the frame; a controller class that track the score of a
+game. beside these support class, it also has three abstract support class: CS15Bomb class that models the bomb that can
+ be added to the game; the CS15Fruit class that models the fruit; the CSFruitNinjaGame that model the game.
+ additionnally it also has an interface called choppable that is implemented by the concrete classes--fruit class and
+ bomb class. the fruit class is the superclass of the classes (apple, peaches, pears and lemons).
+
+DESIGN CHOICES
+in this project i used interface choppable to bind the fruit and bomb class together because they have some similarities.
+I also use inheritance, the apple, pears, lemons, and peaches classes inherited from the fruit class because they have
+similarities and to do the distinction between them I override the getImage methode of the Fruit Class to assign each
+fruit their own image. I also use association between the fruit class and the Cs15scoreController so that I don't have
+to create a method in each of the fruit subclasses just to pass them their score when they are chopped.
+I also use the Switch keyword so I don't have to use a lot of if-else statement, and I use the random function
+to launch the fruit randomly in the LaunchFruit method in the game class.
+Polymorphism was used to update the position of choppable(fruits, bomb) and to check intersection with the blade.
+
+HOURS SPENT: About 16 hours
